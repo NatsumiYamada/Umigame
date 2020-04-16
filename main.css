@@ -1,0 +1,74 @@
+body {
+    background-color:#F4F5F7;
+}
+p{
+    margin: 1.5rem 10%;
+}
+h1{
+    margin: 0 5%;
+}
+a{
+    margin-left: 5px;
+}
+a.anchor {
+    /*遷移先でheaderに隠れないようにする*/
+    display: block;
+    padding-top: 70px;
+    margin-top: -70px;
+}
+#header{
+    /*ついてくる*/
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    /*デザイン*/
+    height:80px;
+    background-color:#C00;
+}
+#transition{
+    font-size: 1.2rem;
+    margin-left: 5%;
+}
+.title{
+    font-weight: bold;
+    font-size: 1.3rem;
+    padding: 0;
+}
+.box{
+    width:700px;
+    height:auto;
+    margin: 2rem 10%;/*前後の余白*/
+    padding: 0.5rem;
+    border: double 5px #800000;
+}
+
+/*答えを隠す*/
+.box label {
+    margin: 1.5rem 10%;
+    padding: 15px;
+    font-weight: bold;
+    border: solid 2px black;
+    cursor :pointer;
+}
+/*ボタンホバー時*/
+.box label:hover {
+    background: #efefef;
+}
+/*チェックは見えなくする*/
+.box input {
+    display: none;
+}
+/*中身を非表示にしておく*/
+.box .answer {
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: 0.8s;
+}
+/*クリックで中身表示*/
+.box input:checked ~ .answer {
+    padding: 10px 0;
+    height: auto;
+    opacity: 1;
+}
